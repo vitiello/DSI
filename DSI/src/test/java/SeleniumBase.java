@@ -75,6 +75,8 @@ public class SeleniumBase extends TestBase {
                 throw new ReportiumException("Unexpected status " + status);
         }
     }
+  
+    
     
 	public RemoteWebDriver createDriver(String targetEnvironment) throws MalformedURLException {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
