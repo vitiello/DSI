@@ -2,8 +2,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="10" name="DSI Web" parallel="tests">
 
-
-
 	<test name="DSI - HTC One M9">
 		<parameter name="targetEnvironment" value="HTC" />
 		<classes>
