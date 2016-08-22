@@ -32,9 +32,8 @@ import ru.yandex.qatools.allure.annotations.Attachment;
 public class SeleniumBase extends TestBase {
 
 	RemoteWebDriver driver;	
+	String TGTENV;
 	
-	
-
 	@BeforeClass(alwaysRun = true)
 	public void baseBeforeClass(ITestContext context) throws MalformedURLException {
 		Map<String, String> params = context.getCurrentXmlTest().getAllParameters();
@@ -81,10 +80,8 @@ public class SeleniumBase extends TestBase {
 	public RemoteWebDriver createDriver(String targetEnvironment) throws MalformedURLException {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		
-		//use my two phones.
 		
-		capabilities.setCapability("openDeviceTimeout", 5);
-		
+		TGTENV = targetEnvironment;
 		
 		
 		switch (targetEnvironment) {	
@@ -92,10 +89,7 @@ public class SeleniumBase extends TestBase {
 			System.out.println("###  iOS ### " + targetEnvironment);
 			capabilities.setCapability("platformName", "iOS");
 			capabilities.setCapability("deviceName", "4EC7F3A2FA62E31A81C64FE30AA719225E2492F2");
-			//capabilities.setCapability("deviceName", "1C3B401545D2CDBEC9D323460D914AD7319F31D9");
 			capabilities.setCapability("windTunnelPersona", "GEORGIA");
-			
-			
 			break;
 		case "HTC":
 			System.out.println("###  HTC ### " + targetEnvironment);
@@ -103,7 +97,6 @@ public class SeleniumBase extends TestBase {
 			capabilities.setCapability("deviceName", "FA53XYJ18872");
 			capabilities.setCapability("browserName", "mobileChrome");
 			capabilities.setCapability("windTunnelPersona", "PETER");
-			
 			break;		
 			
 		case "iPad Air 2":
@@ -113,11 +106,8 @@ public class SeleniumBase extends TestBase {
 			capabilities.setCapability("browserName", "mobileSafari");
 			break;
 		case "Galaxy Tab S2":
-			System.out.println("###  GALAXY TAB 2 ### " + targetEnvironment);
-			
 			capabilities.setCapability("platformName", "Android");
 			capabilities.setCapability("deviceName", "3300A5DB0E4923EB");
-			///capabilities.setCapability("browserName", "mobileChrome");
 			capabilities.setCapability("browserName", "mobileChrome");
 			break;
 		case "Chrome 51":
@@ -125,10 +115,9 @@ public class SeleniumBase extends TestBase {
 			capabilities.setCapability("platformVersion", "7");
 			capabilities.setCapability("browserName", "Chrome");
 			capabilities.setCapability("browserVersion", "51");
-			capabilities.setCapability("resolution", "1366x768");
+			capabilities.setCapability("resolution", "1440x900");
 			capabilities.setCapability("location", "US East");
 			System.out.println("###  CHROME 51 ### " + targetEnvironment);
-			
 			break;	
 		
 		case "Internet Explorer 11":
@@ -136,7 +125,7 @@ public class SeleniumBase extends TestBase {
 			capabilities.setCapability("platformVersion", "8.1");
 			capabilities.setCapability("browserName", "Internet Explorer");
 			capabilities.setCapability("browserVersion", "11");
-			capabilities.setCapability("resolution", "1366x768");
+			capabilities.setCapability("resolution", "1440x900");
 			capabilities.setCapability("location", "US East");
 			break;
 		
@@ -184,7 +173,6 @@ public class SeleniumBase extends TestBase {
 		capabilities.setCapability("user", Constants.USERNAME);
 		capabilities.setCapability("password", Constants.PASSWORD);			
 		capabilities.setCapability("newCommandTimeout", "120");	
-		///capabilities.setCapability("windTunnelPersona", "PETER");
 		capabilities.setCapability("scriptName", "DSI Web");
 
 		driver = new RemoteWebDriver (new Resources().getCloudUrl(), capabilities);

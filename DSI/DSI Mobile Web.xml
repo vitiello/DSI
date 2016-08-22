@@ -2,13 +2,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="10" name="DSI Web" parallel="tests">
 
+
 	<test name="DSI - HTC One M9">
 		<parameter name="targetEnvironment" value="HTC" />
 		<classes>
 			<class name="test.java.DSI_Web"/>
 		</classes>
 	</test>
-	
 	
 	<test name="DSI - iPhone 6">
 		<parameter name="targetEnvironment" value="iPhone 6" />
@@ -17,7 +17,6 @@
 		</classes>
 	</test>
 	
-<!--		
 	<test name="DSI - Firefox 45">
 		<parameter name="targetEnvironment" value="Firefox 45" />
 		<classes>
@@ -25,82 +24,4 @@
 		</classes>
 	</test>
 
-	<test name="DSI - Galaxy Tab S2">
-		<parameter name="targetEnvironment" value="Galaxy Tab S2" />
-		<classes>
-			<class name="test.java.DSI_Web"/>
-		</classes>
-	</test>
-		
- 	<test name="DSI - Chrome 51">
-		<parameter name="targetEnvironment" value="Chrome 51" />
-		<classes>
-			<class name="test.java.DSI_Web"/>
-		</classes>
-	</test>
-	
-	<test name="DSI - Galaxy Tab S2">
-		<parameter name="targetEnvironment" value="Galaxy Tab S2" />
-		<classes>
-			<class name="test.java.DSI_Web"/>
-		</classes>
-	</test>
-
-	<test name="DSI - iPad Air 2">
-		<parameter name="targetEnvironment" value="iPad Air 2" />
-		<classes>
-			<class name="test.java.DSI_Web"/>
-		</classes>
-	</test>
-
-
-	<test name="DSI - Galaxy Tab S2">
-		<parameter name="targetEnvironment" value="Galaxy Tab S2" />
-		<classes>
-			<class name="test.java.SymptomCheckerWeb"/>
-		</classes>
-	</test>
-
-
-	<test name="DSI - Chrome 51">
-		<parameter name="targetEnvironment" value="Chrome 51" />
-		<classes>
-			<class name="test.java.SymptomCheckerWeb"/>
-		</classes>
-	</test>
-
-	<test name="DSI - Internet Explorer 11">
-		<parameter name="targetEnvironment" value="Internet Explorer 11" />
-		<classes>
-			<class name="test.java.SymptomCheckerWeb"/>
-		</classes>
-	</test>
-
-	<test name="DSI - Firefox 46">
-		<parameter name="targetEnvironment" value="Firefox 46" />
-		<classes>
-			<class name="test.java.SymptomCheckerWeb"/>
-		</classes>
-	</test>
-	<test name="DSI - Firefox 45">
-		<parameter name="targetEnvironment" value="Firefox 45" />
-		<classes>
-			<class name="test.java.SymptomCheckerWeb"/>
-		</classes>
-	</test>
-
-	<test name="DSI - Internet Explorer 10">
-		<parameter name="targetEnvironment" value="Internet Explorer 10" />
-		<classes>
-			<class name="test.java.SymptomCheckerWeb"/>
-		</classes>
-	</test>
-	<test name="DSI - Chrome 50">
-		<parameter name="targetEnvironment" value="Chrome 50" />
-		<classes>
-			<class name="test.java.SymptomCheckerWeb"/>
-		</classes>
-	</test>
-	
-		-->
 </suite> 
