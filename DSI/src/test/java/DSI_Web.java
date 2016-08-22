@@ -19,6 +19,7 @@ public class DSI_Web extends SeleniumBase  {
 
 	}
 	
+	
 	@Step("NavigateValidate")
 	private void NavigateValidate(){
 		
